@@ -59,4 +59,9 @@ public class JobController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(isdeleted);
     }
 
+    @GetMapping("jobPosts/keyword/{query}")
+    public  List<JobPost> fetchKeywordPosts(@PathVariable("query") String query){
+        return service.fetchQueries(query);
+    }
+
 }

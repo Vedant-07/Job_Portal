@@ -54,4 +54,8 @@ public class JobService {
 
         return "error delting the job";
     }
+
+    public List<JobPost> fetchQueries(String query){
+        return repo.findByPostProfileContainingOrPostDescContaining(query,query);
+    }
 }
